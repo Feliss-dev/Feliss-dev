@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoang Minh Thanh - Backend Engineer & AI Integration Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0055b8;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff8800;
+            --accent-blue: #0055b8;
+            --text-light: #333333;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --success: #00cc99;
+            --bg-light: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #fff8f3 0%, #ffffff 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0055b8, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #0055b8, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--success);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-color);
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 85, 184, 0.12);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-header h3 {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+        }
+
+        .experience-header .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .experience-company {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-item li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .experience-item.fpt-highlight {
+            border-left-color: var(--accent-color);
+        }
+
+        .experience-item.fpt-highlight h3 {
+            color: var(--accent-color);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 85, 184, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .project-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: #f0f4ff;
+            border: 1px solid #d4dff8;
+            color: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-card li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .project-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: #f0f4ff;
+            border: 1px solid #d4dff8;
+            color: var(--accent-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+
+        /* Tech Stack Badges */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            height: 28px;
+        }
+
+        .badge img {
+            height: 100%;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: var(--bg-light);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .education-item h3 {
+            font-size: 1.2rem;
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .education-item li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .education-item li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stat-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">HMT</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h1>Hoang Minh Thanh</h1>
+            <p class="subtitle">Backend Engineer • AI Integration Specialist • Distributed Systems</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:thanhlta1234@gmail.com">thanhlta1234@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>🌍</span>
+                    <a href="https://github.com/Feliss-dev" target="_blank">github.com/Feliss-dev</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/Feliss-dev" target="_blank" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="mailto:thanhlta1234@gmail.com" title="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <p
+                style="color: var(--text-muted); margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Backend engineer with 3+ years of experience building production-grade systems for education technology,
+                affiliate marketing, and AI-powered platforms. Passionate about designing scalable APIs, integrating
+                LLMs into workflows, and delivering real impact through code.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>💼 Professional Experience</h2>
+
+            <div class="experience-item fpt-highlight">
+                <div class="experience-header">
+                    <div>
+                        <h3>Software Engineer</h3>
+                        <p class="experience-company">FPT Software</p>
+                    </div>
+                    <span class="date">Dec 2025 – Present</span>
+                </div>
+                <ul>
+                    <li>Contributed to an internal AI-powered tool that accelerates legacy system modernization —
+                        bridging the gap between technical and non-technical stakeholders</li>
+                    <li>Integrated AI capabilities for automated code analysis and modernization recommendations</li>
+                    <li>Currently in late-stage development ahead of company-wide rollout at FPT Software</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Freelance Backend Developer</h3>
+                        <p class="experience-company">Self-Employed</p>
+                    </div>
+                    <span class="date">Aug 2025 – Dec 2025</span>
+                </div>
+                <ul>
+                    <li>Designed and implemented backend services for IoT facial recognition systems with real-time
+                        authentication flows</li>
+                    <li>Built Korean affiliate marketing platform with campaign tracking, fraud detection, and real-time
+                        analytics</li>
+                    <li>Developed financial health assessment system for credit institutions with interactive analytics
+                        dashboard</li>
+                    <li>Optimized data retrieval and storage performance for high-concurrency environments</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Backend Developer</h3>
+                        <p class="experience-company">Institute of Digital Technology and AI</p>
+                    </div>
+                    <span class="date">Oct 2024 – Aug 2025</span>
+                </div>
+                <ul>
+                    <li>Built core backend modules for AI-powered learning platform deployed at CMC University and Dai
+                        Nam University</li>
+                    <li>Integrated GPT, Grok, and Gemini APIs for automated exam generation, grading, and learning
+                        assistance</li>
+                    <li>Collaborated in 7-member cross-functional team (PM, BE, FE, QA) across full SDLC</li>
+                    <li>Performed integration testing ensuring API stability, reliability, and production readiness</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Teaching Assistant</h3>
+                        <p class="experience-company">Dai Nam University</p>
+                    </div>
+                    <span class="date">Jul 2024</span>
+                </div>
+                <ul>
+                    <li>Taught Applied Informatics and AI Skills to students in economics and engineering majors</li>
+                    <li>Delivered lessons on computer literacy, office tools, and modern AI applications</li>
+                    <li>Guided students in practical AI integration for academic and research projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>🚀 Featured Projects</h2>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>🎓 AI-Powered Learning Management System</h3>
+                    <a href="https://trogiang.hoctiep.com" target="_blank" class="project-link">trogiang.hoctiep.com</a>
+                    <div class="project-tech">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Redis</span>
+                        <span class="tech-badge">WebSocket</span>
+                    </div>
+                    <ul>
+                        <li>Integrated GPT/Grok/Gemini for exam generation and grading</li>
+                        <li>Built real-time chatbot with WebSocket and OpenWebUI</li>
+                        <li>Improved response time by 30% through query optimization</li>
+                        <li>Deployed automated monitoring with Telegram alerts</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>💰 Financial Health Assessment System</h3>
+                    <a href="http://27.73.33.82:8333" target="_blank" class="project-link">FinScope Platform</a>
+                    <div class="project-tech">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Next.js</span>
+                        <span class="tech-badge">Google AI</span>
+                        <span class="tech-badge">Recharts</span>
+                    </div>
+                    <ul>
+                        <li>Built end-to-end system (backend + frontend) for financial analytics</li>
+                        <li>Integrated Google Document AI for 70% reduction in manual processing</li>
+                        <li>Implemented CAMEL, Basel II financial rating algorithms</li>
+                        <li>Created interactive dashboard with real-time metrics and risk visualization</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>🛡️ Affiliate Marketing & Fraud Detection</h3>
+                    <a href="https://adtok.vercel.app" target="_blank" class="project-link">adtok.vercel.app</a>
+                    <div class="project-tech">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Redis</span>
+                        <span class="tech-badge">WebSocket</span>
+                    </div>
+                    <ul>
+                        <li>Campaign tracking and reward-token transaction APIs</li>
+                        <li>Anti-fraud controls: fingerprinting, CAPTCHA, rate limiting</li>
+                        <li>Real-time event streaming and analytics</li>
+                        <li>Handled thousands of concurrent requests reliably</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>🔍 Facebook Scam Detector (Vietnamese NLP)</h3>
+                    <div class="project-tech">
+                        <span class="tech-badge">PhoBERT</span>
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">FastAPI</span>
+                    </div>
+                    <ul>
+                        <li>NLP pipeline for detecting scam content in Vietnamese text</li>
+                        <li>Fine-tuned PhoBERT for binary/multi-class fraud classification</li>
+                        <li>Model-serving endpoints for real-time moderation workflows</li>
+                        <li>Optimized precision on high-risk scam patterns</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <h3>🚪 Smart IoT Door System</h3>
+                    <div class="project-tech">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">OpenCV</span>
+                        <span class="tech-badge">Python</span>
+                    </div>
+                    <ul>
+                        <li>Facial recognition-based access control system</li>
+                        <li>Real-time authentication APIs for web and mobile</li>
+                        <li>Scalable RESTful architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <h3>📍 Administrative Location Lookup Service</h3>
+                    <a href="https://thaydiachi.com" target="_blank" class="project-link">thaydiachi.com</a>
+                    <div class="project-tech">
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                    <ul>
+                        <li>Public-facing location lookup platform</li>
+                        <li>Backend APIs and integration test coverage</li>
+                        <li>Production deployment and maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>⚙️ Technical Skills</h2>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>💻 Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">C/C++</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🖼️ Backend Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Next.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🗄️ Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 AI/ML & Big Data</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GPT/Gemini/Grok</span>
+                        <span class="skill-tag">PhoBERT</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">Spark</span>
+                        <span class="skill-tag">Hadoop</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🛠️ DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>✔️ Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">System Design</span>
+                        <span class="skill-tag">Scalability</span>
+                        <span class="skill-tag">Fraud Detection</span>
+                        <span class="skill-tag">Real-time Systems</span>
+                        <span class="skill-tag">LLM Integration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>🎓 Education</h2>
+
+            <div class="education-item">
+                <h3>Bachelor of Information Technology</h3>
+                <p class="institution">Hanoi University of Natural Resources and Environment</p>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Expected Graduation: 2026</p>
+                <ul>
+                    <li><strong>GPA:</strong> 3.8 / 4.0 (Excellent)</li>
+                    <li><strong>Achievement:</strong> Academic Merit Scholarship (2022-2024)</li>
+                    <li><strong>Research:</strong> Consolation Prize - "Building an Online Chat System Integrated with
+                        AI Technology"</li>
+                </ul>
+            </div>
+
+            <div
+                style="background: var(--secondary-color); border-left: 4px solid var(--accent-color); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Languages & Certifications</h3>
+                <ul
+                    style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <li>🌍 <strong>English:</strong> TOEIC 875 (2025), IELTS 6.0 (2022)</li>
+                    <li>🗣️ <strong>Vietnamese:</strong> Native speaker</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section style="margin-bottom: 1rem;">
+            <h2>📊 GitHub Stats</h2>
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">
+                <p>View my GitHub profile for detailed project statistics and contributions</p>
+                <a href="https://github.com/Feliss-dev" target="_blank"
+                    style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--accent-color); color: white; text-decoration: none; border-radius: 6px; transition: background 0.3s;">
+                    Visit GitHub Profile →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p style="margin-bottom: 1rem;"><strong>Hoang Minh Thanh</strong></p>
+        <p style="margin-bottom: 1.5rem;">Backend Engineer | AI Integration Specialist | Open to Backend Engineering &
+            AI Roles</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a href="mailto:thanhlta1234@gmail.com" style="color: var(--accent-color); text-decoration: none;">📧
+                thanhlta1234@gmail.com</a>
+            
+            <a href="https://github.com/Feliss-dev" target="_blank"
+                style="color: var(--accent-color); text-decoration: none;">💻 GitHub</a>
+        </div>
+        <p style="border-top: 1px solid var(--border-color); padding-top: 1rem;">© 2026 Hoang Minh Thanh. All rights
+            reserved. | Last updated: April 2026</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

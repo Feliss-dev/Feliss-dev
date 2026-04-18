@@ -9,7 +9,7 @@
 [![TOEIC](https://img.shields.io/badge/TOEIC-875-0077B5?style=flat-square)](https://github.com/Feliss-dev)
 [![IELTS](https://img.shields.io/badge/IELTS-6.0-E53935?style=flat-square)](https://github.com/Feliss-dev)
 
-*Building production-grade backend systems and integrating LLMs into real products.*
+_Building production-grade backend systems and integrating LLMs into real products._
 
 </div>
 
@@ -23,7 +23,11 @@ Backend engineer with hands-on experience shipping production systems across edu
 
 ## Experience
 
-**Freelance Backend Developer** `Aug 2025 – Present`
+**Software Engineer — FPT Software** `Dec 2025 – Present`
+
+Contributed to an internal AI-powered tool that accelerates legacy system modernization — bridging the gap between technical and non-technical stakeholders. Currently in late-stage development ahead of company-wide rollout at FPT Software.
+
+**Freelance Backend Developer** `Aug 2025 – Dec 2025`
 
 Built and deployed backend services across three client domains: an IoT facial recognition system for smart access control, a Korean affiliate marketing platform with real-time campaign analytics, and a financial health assessment tool for credit institutions. Key focus on API resilience, security hardening, and high-concurrency performance.
 
@@ -40,9 +44,11 @@ Delivered practical instruction in Applied Informatics and modern AI tooling for
 ## Selected Projects
 
 ### 🎓 AI-Powered Learning Management System
+
 [trogiang.hoctiep.com](https://trogiang.hoctiep.com/) · `FastAPI · PostgreSQL · Redis · WebSocket · Docker`
 
 LMS platform with AI-assisted exam generation, real-time student chatbot, and automated grading — currently serving thousands of users across two universities.
+
 - Integrated GPT / Grok / Gemini workflows for content generation and adaptive grading
 - Built real-time chatbot layer with WebSocket and OpenWebUI
 - Optimized query and schema design → **30% improvement in response time**
@@ -50,10 +56,12 @@ LMS platform with AI-assisted exam generation, real-time student chatbot, and au
 
 ---
 
-### 🛡️ Affiliate Marketing & Fraud Detection Platform (Korea)
+### �️ Affiliate Marketing & Fraud Detection Platform (Korea)
+
 [adtok.vercel.app](https://adtok.vercel.app/) · `FastAPI · PostgreSQL · Redis · WebSocket`
 
 High-throughput campaign tracking and reward-token transaction system with built-in anti-fraud infrastructure.
+
 - Designed fraud prevention stack: device fingerprinting, CAPTCHA, and rate limiting against automated bots
 - Redis caching + WebSocket streaming for real-time event analytics
 - Handled thousands of concurrent requests with strict accuracy guarantees on financial transactions
@@ -61,9 +69,11 @@ High-throughput campaign tracking and reward-token transaction system with built
 ---
 
 ### 🔍 Facebook Scam Detector (Vietnamese NLP)
+
 `Python · PhoBERT · PyTorch · Transformers · FastAPI`
 
 NLP pipeline for detecting scam content in Vietnamese social media text.
+
 - Fine-tuned PhoBERT for binary and multi-class fraud classification
 - Built model-serving endpoints for real-time integration into moderation workflows
 - Optimized precision on high-risk scam pattern categories
@@ -71,6 +81,7 @@ NLP pipeline for detecting scam content in Vietnamese social media text.
 ---
 
 ### 🚪 Smart IoT Door System
+
 `Python · FastAPI · OpenCV`
 
 Computer vision–based access control service with facial recognition, delivering real-time authentication APIs for web and mobile clients.
@@ -78,6 +89,7 @@ Computer vision–based access control service with facial recognition, deliveri
 ---
 
 ### 📍 Administrative Location Lookup Service
+
 [thaydiachi.com](https://thaydiachi.com) · `FastAPI · PostgreSQL`
 
 Public-facing location lookup platform — delivered backend APIs and full integration test coverage.
@@ -113,16 +125,16 @@ Public-facing location lookup platform — delivered backend APIs and full integ
   <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" />
 </p>
 
-| Layer | Tools |
-|---|---|
-| **Backend** | FastAPI, Spring Boot, Laravel, Next.js |
-| **Languages** | Python, Java, C#, TypeScript, PHP, C/C++ |
-| **Databases** | PostgreSQL, MySQL, MongoDB, Redis |
-| **Big Data** | Apache Spark, Hadoop |
-| **AI / ML** | GPT · Gemini · Grok · PhoBERT · OpenWebUI · Ollama · scikit-learn |
-| **Testing** | Postman, Selenium, Katalon Studio, Jira |
-| **DevOps** | Docker, Git, Bash, CI/CD |
-| **Mobile** | Android Studio |
+| Layer         | Tools                                                             |
+| ------------- | ----------------------------------------------------------------- |
+| **Backend**   | FastAPI, Spring Boot, Laravel, Next.js                            |
+| **Languages** | Python, Java, C#, TypeScript, PHP, C/C++                          |
+| **Databases** | PostgreSQL, MySQL, MongoDB, Redis                                 |
+| **Big Data**  | Apache Spark, Hadoop                                              |
+| **AI / ML**   | GPT · Gemini · Grok · PhoBERT · OpenWebUI · Ollama · scikit-learn |
+| **Testing**   | Postman, Selenium, Katalon Studio, Jira                           |
+| **DevOps**    | Docker, Git, Bash, CI/CD                                          |
+| **Mobile**    | Android Studio                                                    |
 
 ---
 
@@ -132,7 +144,7 @@ Public-facing location lookup platform — delivered backend APIs and full integ
 Bachelor of Information Technology · GPA **3.8 / 4.0** · Expected 2026
 
 - Academic Merit Scholarship (2022–2024)
-- Consolation Prize — University-level Scientific Research: *"Building an Online Chat System Integrated with AI Technology"*
+- Consolation Prize — University-level Scientific Research: _"Building an Online Chat System Integrated with AI Technology"_
 
 ---
 
@@ -149,6 +161,6 @@ Bachelor of Information Technology · GPA **3.8 / 4.0** · Expected 2026
 
 <div align="center">
 
-*Open to backend engineering and AI integration roles · Available for collaboration*
+_Open to backend engineering and AI integration roles · Available for collaboration_
 
 </div>
